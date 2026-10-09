@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lash Lane | Mobile Lash Artistry in Brooklyn</title>
+    <!-- Google Fonts: Playfair Display & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-cream: #FAF5EE;
+            --text-charcoal: #2C2C2C;
+            --accent-sage: #4A6741;
+            --accent-gold: #C9A84C;
+            --border-color: #E2DBD3;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-charcoal);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header / Nav */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-style: italic;
+            color: var(--accent-gold);
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        nav a {
+            color: var(--text-charcoal);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-sage);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            font-size: 12px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent-sage);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: var(--text-charcoal);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #555555;
+            max-width: 600px;
+            margin: 0 auto 36px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--text-charcoal);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-sage);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-charcoal);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-charcoal);
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .section-intro {
+            text-align: center;
+            color: #666666;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        /* Tables / Menu Cards */
+        .menu-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .menu-table th, .menu-table td {
+            padding: 20px 24px;
+            text-align: left;
+        }
+
+        .menu-table th {
+            background-color: #F4EFEA;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: var(--text-charcoal);
+        }
+
+        .menu-table tr:not(:last-child) td {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .menu-table td .service-name {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .menu-table td .service-desc {
+            font-size: 13px;
+            color: #666666;
+        }
+
+        .menu-table td.price {
+            font-weight: 600;
+            color: var(--accent-sage);
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        /* Donation Box */
+        .donation-box {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .donation-box p {
+            color: #666666;
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        .amount-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .amount-btn {
+            background: var(--bg-cream);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .amount-btn:hover, .amount-btn.active {
+            background: var(--accent-gold);
+            color: var(--white);
+            border-color: var(--accent-gold);
+        }
+
+        .p2p-handles {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #777777;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #777777;
+        }
+
+        footer p + p {
+            margin-top: 6px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-table th, .menu-table td {
+                padding: 16px 14px;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">Lash Lane</div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#travel">Travel Zones</a>
+                <a href="#support">Community Fund</a>
+                <a href="#book" style="color: var(--accent-sage); font-weight: 700;">Book Now</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="book">
+            <div class="eyebrow">Mobile Lash Artistry · Brooklyn, NY</div>
+            <h1>Luxury Delivered to Your Door.</h1>
+            <p>Affirming, custom lash cluster styling tailored to your unique look—right in the comfort of your space across Brooklyn.</p>
+            <div class="cta-group">
+                <a href="https://forms.gle/your-intake-form-link" target="_blank" class="btn btn-primary">Book Your Mobile Session</a>
+                <a href="#support" class="btn btn-secondary">Support the Community Fund</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Effortless Luxury, Tailored For You</h2>
+            <p class="section-intro">Fast, flawless, and lightweight cluster applications designed for your everyday vibe.</p>
+            
+            <table class="menu-table">
+                <thead>
+                    <tr>
+                        <th>Service Offering</th>
+                        <th style="text-align: right;">Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="service-name">Lash Lane Signature Clusters (Full Set)</span>
+                            <span class="service-desc">Seamless, lightweight custom cluster application. Flawless look, faster application time, designed for everyday wear.</span>
+                        </td>
+                        <td class="price">$90.00 – $110.00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="service-name">Everyday Quick-Set Clusters</span>
+                            <span class="service-desc">Fast, effortless cluster application for clients on the go who want maximum impact with minimal upkeep.</span>
+                        </td>
+                        <td class="price">$75.00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="service-name">Cluster Refill / Maintenance</span>
+                            <span class="service-desc">Quick refresh and replacement of grown-out or lifted clusters (recommended every 1.5 to 2 weeks).</span>
+                        </td>
+                        <td class="price">$45.00 – $55.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Travel Zones Section -->
+        <section id="travel">
+            <h2>We Come To You</h2>
+            <p class="section-intro">Operating across Brooklyn via smart rideshare and transit scheduling to keep your experience seamless.</p>
+            
+            <table class="menu-table">
+                <thead>
+                    <tr>
+                        <th>Transit Zone & Neighborhoods</th>
+                        <th style="text-align: right;">Transit Surcharge</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="service-name">Zone 1: Core Hub (Local)</span>
+                            <span class="service-desc">Crown Heights, Bed-Stuy, Flatbush, East New York</span>
+                        </td>
+                        <td class="price">$15.00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="service-name">Zone 2: Extended Brooklyn</span>
+                            <span class="service-desc">Downtown Brooklyn, Williamsburg, Bushwick, Park Slope</span>
+                        </td>
+                        <td class="price">$25.00 – $35.00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="service-name">Zone 3: Outer Brooklyn</span>
+                            <span class="service-desc">Coney Island, Bay Ridge, Brighton Beach, outer borders</span>
+                        </td>
+                        <td class="price">$40.00 – $50.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Support / Donation Section -->
+        <section id="support">
+            <h2>Support Independent Brooklyn Artistry</h2>
+            <p class="section-intro">Help fuel mobile expansion, gear upgrades, and community-centered beauty access.</p>
+            
+            <div class="donation-box">
+                <p>If you love what we do and want to support our mission, contribute directly below:</p>
+                
+                <div class="amount-buttons">
+                    <button class="amount-btn" onclick="setAmount(10)">$10</button>
+                    <button class="amount-btn active" onclick="setAmount(25)">$25</button>
+                    <button class="amount-btn" onclick="setAmount(50)">$50</button>
+                    <button class="amount-btn" onclick="setAmount(100)">$100</button>
+                </div>
+
+                <!-- Replace href with your Stripe Payment Link -->
+                <a href="https://buy.stripe.com/your-payment-link" target="_blank" class="btn btn-primary" style="width: 100%;">Contribute via Card / Apple Pay</a>
+                
+                <div class="p2p-handles">
+                    Or send via Zelle / CashApp: <strong>$LashLane</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p><strong>Lash Lane</strong> · Mobile Lash Artistry in Brooklyn, New York.</p>
+            <p>Supported in part by community initiatives and micro-enterprise frameworks.</p>
+            <p style="margin-top: 16px;">@lashlane | hello@lashlanebrooklyn.com</p>
+            <p>© 2026 Lash Lane. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function setAmount(amount) {
+            document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            // Hook up to Stripe link parameter customization if needed
+        }
+    </script>
+</body>
+</html>
